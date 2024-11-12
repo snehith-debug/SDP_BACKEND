@@ -8,7 +8,7 @@ const studentRoutes = require('./routes/studentRoutes');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({origin : "*"}));
 app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGODB_URI)
