@@ -1,4 +1,4 @@
-const Student = require('../models/Student');
+const Student = require('../models/Student.js');
 
 // Create a student
 exports.createStudent = async (req, res) => {
@@ -14,7 +14,7 @@ exports.createStudent = async (req, res) => {
 // Read all students
 exports.getStudents = async (req, res) => {
   try {
-    const students = await Student.find();
+    const students = await Student.find({});
     res.json(students);
   } catch (error) {
     res.status(500).json({ message: error.message });
